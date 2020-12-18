@@ -10,7 +10,7 @@ const router = require('./router')
 app.use(helmet())
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`For local develompent: exporter listening at http://localhost:${port}`)
 })
 
 app.use('/', router)
