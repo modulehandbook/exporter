@@ -50,13 +50,11 @@ exports.export_program = (filename, program_data, callBack) => {
   const program_infos = [
     new docx.Paragraph({
       text: program_data.name,
-      style: 'Heading 0',
       heading: docx.HeadingLevel.HEADING_1,
     }),
     new docx.Paragraph({
       text: 'Program Infos',
-      style: 'Heading 2',
-      heading: docx.HeadingLevel.HEADING_2,
+      heading: docx.HeadingLevel.HEADING_3,
     }),
     new docx.Table({
       width: {
@@ -122,11 +120,11 @@ exports.export_program = (filename, program_data, callBack) => {
     var course = [
       new docx.Paragraph({
         text: courses[i].name,
-        heading: docx.HeadingLevel.HEADING_1,
+        heading: docx.HeadingLevel.HEADING_2,
       }),
       new docx.Paragraph({
         text: 'A - Basic Information',
-        heading: docx.HeadingLevel.HEADING_2,
+        heading: docx.HeadingLevel.HEADING_3,
       }),
       new docx.Table({
         shading: {
@@ -221,7 +219,7 @@ exports.export_program = (filename, program_data, callBack) => {
 
       new docx.Paragraph({
         text: 'B - Professional Information',
-        heading: docx.HeadingLevel.HEADING_2,
+        heading: docx.HeadingLevel.HEADING_3,
       }),
 
       new docx.Table({
@@ -235,7 +233,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'Aims',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -308,7 +306,7 @@ exports.export_program = (filename, program_data, callBack) => {
                 children: [
                   new docx.Paragraph({
                     text: 'Intended Learning Outcomes',
-                    heading: docx.HeadingLevel.HEADING_3,
+                    heading: docx.HeadingLevel.HEADING_4,
                   }),
                   new docx.Paragraph(' By the end of the course the student will have gained the following skills:'),
                 ],
@@ -398,7 +396,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'Learning and Teaching Methods',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -425,7 +423,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'Facilities required for teaching & learning',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -459,7 +457,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'Assessment',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -486,7 +484,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'References',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -506,7 +504,7 @@ exports.export_program = (filename, program_data, callBack) => {
 
       new docx.Paragraph({
         text: 'C - Administrative Information',
-        heading: docx.HeadingLevel.HEADING_2,
+        heading: docx.HeadingLevel.HEADING_3,
       }),
 
       new docx.Table({
@@ -520,7 +518,7 @@ exports.export_program = (filename, program_data, callBack) => {
               new docx.TableCell({
                 children: [new docx.Paragraph({
                   text: 'Course Coordinator Contact Information',
-                  heading: docx.HeadingLevel.HEADING_3,
+                  heading: docx.HeadingLevel.HEADING_4,
                 }),],
               }),
             ],
@@ -568,11 +566,11 @@ exports.export_program = (filename, program_data, callBack) => {
   const toc = [
     new docx.Paragraph({
       text: 'Courses',
-      heading: docx.HeadingLevel.HEADING_2,
+      heading: docx.HeadingLevel.HEADING_3,
     }),
     new docx.TableOfContents('Courses', {
     hyperlink: true,
-    headingStyleRange: '1-1',
+    headingStyleRange: '2-2',
     }),
     new docx.Paragraph({
       children: [new docx.PageBreak()],
@@ -597,7 +595,6 @@ exports.export_program = (filename, program_data, callBack) => {
   // Used to export the file into a .docx file
 
   docx.Packer.toBuffer(doc).then((buffer) => {
-    console.log('done generating');
     fs.writeFileSync('./' + filename, buffer);
     callBack();
   });
