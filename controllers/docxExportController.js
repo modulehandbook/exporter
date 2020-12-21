@@ -9,11 +9,13 @@ exports.program = (req, res) => {
   const filename = 'files/' + date_today + '_' + code + '-' + name + '.docx'
 
   console.log('started export');
-  docx_exporter.export_program(filename, program_data)
-  console.log('export done');
-  res.download(filename, function(err){ //file gips nicht - y?!
-    if (err) {
-      throw err
-    }
+  docx_exporter.export_program(filename, program_data, ()=>{
+    console.log('export done');
+    res.download(filename, function(err){ //file gips nicht - y?!
+      if (err) {
+        throw err
+      }
+    })
   })
+
 }

@@ -3,7 +3,7 @@ const fs = require('fs')
 //const fileSaver = require('file-saver')
 
 
-exports.export_program = (filename, program_data) => {
+exports.export_program = (filename, program_data, callBack) => {
   // Create document
   // console.log(program_data)
   const styles = fs.readFileSync('./styles/docx/styles.xml', 'utf-8');
@@ -599,6 +599,7 @@ exports.export_program = (filename, program_data) => {
   docx.Packer.toBuffer(doc).then((buffer) => {
     console.log('done generating');
     fs.writeFileSync('./' + filename, buffer);
+    callBack();
   });
   // Done!
 
