@@ -3,7 +3,7 @@ const fs = require('fs')
 //const fileSaver = require('file-saver')
 
 
-exports.export = (filename, program_data) => {
+exports.export_program = (filename, program_data) => {
   // Create document
   // console.log(program_data)
   const styles = fs.readFileSync('./styles/docx/styles.xml', 'utf-8');
@@ -594,20 +594,10 @@ exports.export = (filename, program_data) => {
     children: contents,
   });
 
-  // TODO: TypeError: doc.addTableOfContents is not a function
-  // add table of contents
-  // const toc = new docx.TableOfContents('Modules', {
-  //   hyperlink: true,
-  //   headingStyleRange: '2-5',
-  // });
-  // // console.log(doc);
-  //
-  // doc.addTableOfContents(toc);
-
   // Used to export the file into a .docx file
 
-
   docx.Packer.toBuffer(doc).then((buffer) => {
+    console.log('done generating');
     fs.writeFileSync('./' + filename, buffer);
   });
   // Done!

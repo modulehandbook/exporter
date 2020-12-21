@@ -8,8 +8,10 @@ exports.program = (req, res) => {
   const date_today = new Date().toJSON().slice(0,10);
   const filename = 'files/' + date_today + '_' + code + '-' + name + '.docx'
 
-  docx_exporter.export(filename, program_data)
-  res.download(filename, function(err){
+  console.log('started export');
+  docx_exporter.export_program(filename, program_data)
+  console.log('export done');
+  res.download(filename, function(err){ //file gips nicht - y?!
     if (err) {
       throw err
     }
