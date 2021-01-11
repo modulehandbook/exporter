@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "lotteunckell",
   "license": "ISC",
   "dependencies": {
     "docx": "^5.4.1",
     "express": "^4.17.1",
-    "helmet": "^4.2.0"
+    "helmet": "^4.2.0",
+    "simple-markdown": "^0.7.3"
   },
   "engines": {
     "node": "12.16.1"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
   }
 }
