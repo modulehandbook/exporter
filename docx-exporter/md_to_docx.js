@@ -1,10 +1,20 @@
-var SimpleMarkdown = require("simple-markdown")
-var mdParse = SimpleMarkdown.defaultBlockParse
+const MarkdownParserProxy = require('../docx-exporter/markdownparser-proxy')
+const Docx = require('docx')
 
-// mdParse can give us a syntax tree:
-var syntaxTree = mdParse("Here is a paragraph and an *em tag*.")
-// pretty-print this with 4-space indentation:
-console.log(JSON.stringify(syntaxTree, null, 2))
+// **Bold**, -> strong
+// _Cursive_, -> em
+// Links: [LinkTarget](LinkAlt), -> link
+// # / ======= Headings, -> heading
+// > Quote, -> blockQuote
+// * / - Bullets, -> list, ordered: false
+// 1. Numbered List, -> list, ordered: true
+
+class DocxGenerator {
+  constructor() {
+    this.markdownParser = new MarkdownParserProxy()
+  }
 
 
-// **Bold**, _Cursive_, Links: [https://bkleinen.github.io](https://bkleinen.github.io), Headings=======, > Quote, * / - Bullets, 1. Numbered List, Indentation (2 Spaces)
+}
+
+module.exports = DocxGenerator
