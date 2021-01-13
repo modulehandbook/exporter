@@ -1,4 +1,4 @@
-const MarkdownParserProxy = require('../docx-exporter/markdownparser-proxy')
+const MarkdownParserProxy = require('../docx-exporter/markdown_parser_proxy')
 const markdownParser = new MarkdownParserProxy()
 
 // **Bold**, -> strong
@@ -18,7 +18,12 @@ describe("simple text", () => {
 })
 
 describe("linebreaks", () => {
-    it("should make multiple lines when dealing with linebreaks", () => {
+    it("should not make multiple lines when 1 linebreak", () => {
+        var actual = markdownParser.parse("no formatting\nexcept linebreaks")
+        var expected = [{"content": [{"content": "no formatting\nexcept linebreaks", "type": "text"}], "type": "paragraph"}]
+        expect(actual).toEqual(expected)
+    })
+    it("should make multiple lines when 2 linebreaks", () => {
         var actual = markdownParser.parse("no formatting\n\nexcept linebreaks")
         var expected = [{"content": [{"content": "no formatting", "type": "text"}], "type": "paragraph"}, {"content": [{"content": "except linebreaks", "type": "text"}], "type": "paragraph"}]
         expect(actual).toEqual(expected)

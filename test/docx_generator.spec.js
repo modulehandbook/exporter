@@ -1,4 +1,4 @@
-const DocxGeneratorProxy = require('../docx-exporter/docxgenerator-proxy')
+const DocxGeneratorProxy = require('../docx-exporter/docx_generator_proxy')
 const docxGenerator = new DocxGeneratorProxy()
 
 // Bold
