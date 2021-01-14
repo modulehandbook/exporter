@@ -171,3 +171,11 @@ describe("1. List", () => {
         expect(actual).toEqual(expected)
     })
 })
+
+describe("complicated text", () => {
+    it("should get all the formating", () => {
+        var actual = markdownParser.parse("# so this is a heading\n\nand some **bold** and _cursive_ content\n\nand more.\n\n> here is a\nmultiline quote now.\n\nsome more text and:\n\n- some bullets\n- and more bullets\n- and more")
+        var expected = [{"content": [{"content": "so this is a heading", "type": "text"}], "level": 1, "type": "heading"}, {"content": [{"content": "and some ", "type": "text"}, {"content": [{"content": "bold", "type": "text"}], "type": "strong"}, {"content": " and ", "type": "text"}, {"content": [{"content": "cursive", "type": "text"}], "type": "em"}, {"content": " content", "type": "text"}], "type": "paragraph"}, {"content": [{"content": "and more", "type": "text"}, {"content": ".", "type": "text"}], "type": "paragraph"}, {"content": [{"content": [{"content": "here is a\nmultiline quote now", "type": "text"}, {"content": ".", "type": "text"}], "type": "paragraph"}], "type": "blockQuote"}, {"content": [{"content": "some more text and", "type": "text"}, {"content": ":", "type": "text"}], "type": "paragraph"}, {"items": [[{"content": "some bullets", "type": "text"}], [{"content": "and more bullets", "type": "text"}], [{"content": "and more", "type": "text"}]], "ordered": false, "start": undefined, "type": "list"}]
+        expect(actual).toEqual(expected)
+    })
+})
