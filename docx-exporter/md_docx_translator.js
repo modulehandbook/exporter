@@ -17,9 +17,6 @@ class MdDocxTranslator {
 
   translate(markdown) {
     const parsedMD = this.markdownParser.parse(markdown)
-    if (markdown == "something\n> A Quote\n\nelse") {
-      console.log(JSON.stringify(parsedMD));
-    }
     var docxElements = []
     var text, element
     for (var i = 0; i < parsedMD.length; i++) {
