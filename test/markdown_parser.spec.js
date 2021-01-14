@@ -107,8 +107,8 @@ describe("> Quote", () => {
         expect(actual).toEqual(expected)
     })
     it("should convert a quote element between other elements", () => {
-        var actual = markdownParser.parse("something\n> A Quote\n\nelse")
-        var expected = [{"content": [{"content": "something\n", "type": "text"}, {"content": "> A Quote", "type": "text"}], "type": "paragraph"}, {"content": [{"content": "else", "type": "text"}], "type": "paragraph"}]
+        var actual = markdownParser.parse("something\n\n> A Quote\n\nelse")
+        var expected = [{"content": [{"content": "something", "type": "text"}], "type": "paragraph"}, {"content": [{"content": [{"content": "A Quote", "type": "text"}], "type": "paragraph"}], "type": "blockQuote"}, {"content": [{"content": "else", "type": "text"}], "type": "paragraph"}]
         expect(actual).toEqual(expected)
     })
 })
@@ -126,7 +126,7 @@ describe("- Bullets", () => {
     })
     it("should convert multiple bullet elements between other elements", () => {
         var actual = markdownParser.parse("something\n\n- Bullet 1 \n- Bullet 2 \n- Bullet 3\n\nelse")
-        var expected = [{"content": [{"content": "something", "type": "text"}], "type": "paragraph"}, {"items": [[{"content": "Bullet 1", "type": "text"}], [{"content": "Bullet 2", "type": "text"}], [{"content": "Bullet 3", "type": "text" }]], "ordered": false, "start": undefined, "type": "list"}, {"content": [{"content": "else", "type": "text"}], "type": "paragraph"}]
+        var expected = [{"content": [{"content": "something", "type": "text"}], "type": "paragraph"}, {"items": [[{"content": "Bullet 1", "type": "text"}], [{"content": "Bullet 2", "type": "text"}], [{"content": "Bullet 3", "type": "text"}]], "ordered": false, "start": undefined, "type": "list"}, {"content": [{"content": "else", "type": "text"}], "type": "paragraph"}]
         expect(actual).toEqual(expected)
     })
 })
