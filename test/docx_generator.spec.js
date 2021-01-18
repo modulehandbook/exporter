@@ -9,6 +9,13 @@ const docxGenerator = new DocxGeneratorProxy()
 // Bullet List
   // Numbered List
 
+describe("generate empty paragraph", () => {
+    it("should be ok with no text", () => {
+        var actual = docxGenerator.generateEmptyParagraph()
+        var expected = {"deleted": false, "properties": {"deleted": false, "root": [], "rootKey": "w:pPr"}, "root": [{"deleted": false, "root": [], "rootKey": "w:pPr"}, {"deleted": false, "properties": {"deleted": false, "root": [], "rootKey": "w:rPr"}, "root": [{"deleted": false, "root": [], "rootKey": "w:rPr"}, {"deleted": false, "root": [{"deleted": false, "root": {"space": "preserve"}, "rootKey": "_attr", "xmlKeys": {"space": "xml:space"}}, ""], "rootKey": "w:t"}], "rootKey": "w:r"}], "rootKey": "w:p"}
+        expect(actual).toEqual(expected)
+    })
+})
 
 // new docx.TextRun({ text: "simple text" })
 

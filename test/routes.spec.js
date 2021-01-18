@@ -19,6 +19,14 @@ describe('GET', () => {
   			done()
     })
   })
+  it('/docx/demo has status ok', done => {
+    request(app)
+      .get('/docx/demo')
+      .then((res) => {
+  			expect(res.statusCode).toBe(200)
+  			done()
+    })
+  })
 })
 
 describe('POST', () => {

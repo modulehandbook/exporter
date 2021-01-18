@@ -16,6 +16,11 @@ class MdDocxTranslator {
   }
 
   translate(markdown) {
+    if (markdown === '') {
+      var array = []
+      array.push(this.docxGenerator.generateEmptyParagraph())
+      return array
+    }
     const parsedMD = this.markdownParser.parse(markdown)
     var docxElements = []
     var text, element

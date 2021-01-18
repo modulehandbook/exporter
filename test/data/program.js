@@ -1,9 +1,9 @@
 const program = {
   id: 8,
-  name: "Automation and Control Engineering",
-  code: "",
+  name: "Amazing Demo Program",
+  code: "ADP",
   mission:
-    "The Bachelor's program in Electrical Engineering (EE) with specialisation in Automation and Control Engineering offers scientific methods and skills for solving problems in practical settings. The  program leads to a Bachelor of Engineering (B.Eng.) degree. Important objectives of the study program are the teaching of methodological and social competence in small seminar groups. In addition to the seminars, the students complete a large proportion of practical laboratory exercises and carry out projects that are intensively supervised by professors and teaching assistants. The Bachelor's program prepares students for engineering activities in the development of devices and systems in electrical energy and automation technology, project planning of electrical and automation systems and their operation, testing and maintenance.",
+    "This is an amazing demo program to demo the docx exporter",
   degree: "B. Eng.",
   ects: 240,
   url: "http://module-handbook.herokuapp.com/programs/8.json",
@@ -28,7 +28,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills.",
       skills_intellectual:
-        "Students are inellectual skills.\r\n",
+        "Students have inellectual skills.\r\n",
       skills_practical:
         "Students have practical skills.",
       skills_general:
@@ -61,7 +61,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills:\r\n \r\n *    skill 1\r\n *   skill 2\r\n *   skill 3\r\n *    skill 4\r\n *    skill 5\r\n *    skill 6\r\n *   skill 7\r\n * skill 8",
       skills_intellectual:
-        "Students are inellectual skills.\r\n",
+        "Students have inellectual skills.\r\n",
       skills_practical:
         "Students have practical skills.",
       skills_general:
@@ -93,7 +93,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills",
       skills_intellectual:
-        "Students are inellectual skills.",
+        "Students have inellectual skills.",
       skills_practical:
         "Students have practical skills.",
       skills_general:
@@ -126,7 +126,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills,\r\nsome more knowledge and understanding skills,\r\nsome more knowledge and understanding skills,\r\nsome more knowledge and understanding skills",
       skills_intellectual:
-        "Students are inellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills.",
+        "Students have inellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills,\r\nsome more intellectual skills.",
       skills_practical:
         "Students have practical skills,\r\nsome more practical skills,\r\nsome more practical skills.",
       skills_general:
@@ -157,7 +157,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills",
       skills_intellectual:
-        "Students are inellectual skills.",
+        "Students have inellectual skills.",
       skills_practical:
         "Students have practical skills.",
       skills_general:
@@ -214,7 +214,7 @@ const program = {
       skills_knowledge_understanding:
         "Students have knowledge and understanding skills",
       skills_intellectual:
-        "Students are inellectual skills.",
+        "Students have inellectual skills.",
       skills_practical:
         "Students have practical skills.",
       skills_general:
