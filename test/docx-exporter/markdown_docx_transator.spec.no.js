@@ -1,4 +1,4 @@
-const MdDocxTranslator = require('../docx-exporter/md_docx_translator')
+const MdDocxTranslator = require('../../docx-exporter/md_docx_translator')
 const mdDocxTranslator = new MdDocxTranslator()
 
 // **Bold**, -> strong

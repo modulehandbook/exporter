@@ -1,5 +1,5 @@
 'use strict'
-const DocxExporter = require('../docx-exporter/docx-export')
+const DocxExporter = require('../docx-exporter_html/docx-export')
 const ExportHelper = require('../helper/export_helper')
 const docxExporter = new DocxExporter()
 const exportHelper = new ExportHelper()

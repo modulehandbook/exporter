@@ -1,4 +1,4 @@
-const MarkdownParserProxy = require('../docx-exporter/markdown_parser_proxy')
+const MarkdownParserProxy = require('../../docx-exporter/markdown_parser_proxy')
 const markdownParser = new MarkdownParserProxy()
 
 // **Bold**, -> strong

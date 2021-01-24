@@ -74,7 +74,10 @@ class DocxGeneratorProxy {
   }
 
   generateText(text, bold, italics) {
-    return new this.generator.TextRun({ text: text, bold: bold, italics: italics })
+    if (text === '') text = '-'
+    return new this.generator.Paragraph({
+      children: [new this.generator.TextRun({ text: text, bold: bold, italics: italics })],
+    })
   }
 
   generateQuote(text) {
@@ -119,13 +122,28 @@ class DocxGeneratorProxy {
     if (Array.isArray(bullets)) {
       var children = []
       for(var i = 0; i < bullets.length; i++) {
-        var child = this.generateText(bullets[i])
+        var child = new this.generator.Paragraph({ //was wenn das hier der Paragraph generator macht mit einem param mehr?
+          text: bullets[i],
+          bullet: {
+            level: level, //How deep you want the bullet to be
+          },
+        })
         children = children.concat(child);
       }
-      return new this.generator.Paragraph({ children: children, bullet: { level: level } })
+      return children
     } else {
-      return new this.generator.Paragraph({ text: bullets, bullet: { level: level } })
+      return new this.generator.Paragraph({
+        text: bullets,
+        bullet: {
+          level: level, //How deep you want the bullet to be
+        },
+      })
     }
+
+
+
+
+
   }
 
   generateTable(content) {
@@ -138,8 +156,7 @@ class DocxGeneratorProxy {
       if (typeof content[i][1] === 'string') {
         cellContent = [new this.generator.Paragraph(content[i][1])]
       } else {
-        //console.log(JSON.stringify(content[i][1]))
-        cellContent = content[i][1]
+        cellContent = content[i][1] // WAS IS MIT EMPTY LISTS?
       }
       const table = new this.generator.TableRow({
         children: [
