@@ -62,22 +62,6 @@ class DocxExporter {
     ${this.generatePageBreak()}`
   }
 
-  // generateProgramComponents(program_data) {
-  //   const programHeading = this.generateHeading(program_data.name, 1)
-  //   const programInfosHeading = this.generateHeading('Program Infos', 3)
-  //   const programInfosTable = this.generateTable([
-  //     ['Code', this.exportHelper.stringify(program_data.code)],
-  //     ['Degree', this.exportHelper.stringify(program_data.degree)],
-  //     ['ECTS', this.exportHelper.stringify(program_data.ects)],
-  //     ['Mission', this.exportHelper.stringify(program_data.mission)],
-  //   ])
-  //
-  //   return `${programHeading}
-  //   ${programInfosHeading}
-  //   ${programInfosTable}
-  //   ${this.generatePageBreak()}`
-  // }
-
   generateCourseComponents(program_data) {
     var course_infos = ''
     const courses = program_data.courses
@@ -155,85 +139,6 @@ class DocxExporter {
     return course_infos
   }
 
-  // generateCourseComponents(program_data) {
-  //   var course_infos = ''
-  //   const courses = program_data.courses
-  //   var i
-  //   for(i = 0; i < courses.length; i++) {
-  //     const courseName = this.generateHeading(courses[i].name, 2)
-  //     const a_BasicInformation = this.generateHeading('A - Basic Information', 3)
-  //     const a_basicsTable = this.generateTable([
-  //       ['Semester', this.exportHelper.stringify(courses[i].semester)],
-  //       ['Year', this.exportHelper.stringify(Math.ceil(courses[i].semester/2))],
-  //       ['Code', this.exportHelper.stringify(courses[i].code)],
-  //       ['Type', this.exportHelper.stringify(courses[i].required)],
-  //       ['Weekly contact hours', this.exportHelper.stringify(courses[i].lectureHrs)],
-  //       ['ECTS', this.exportHelper.stringify(courses[i].ects)],
-  //       ['Prerequisites', this.exportHelper.stringify(courses[i].prerequisites)],
-  //     ])
-  //     const b_professionalInformation = this.generateHeading('B - Professional Information', 3)
-  //     const b_aimsHeading = this.generateHeading('Aims', 4)
-  //     const b_aimsTable = this.generateTable([
-  //       ['Mission', this.exportHelper.stringify(courses[i].mission)],
-  //       ['Objectives', this.exportHelper.stringify(courses[i].objectives)],
-  //       ['Contents', this.exportHelper.stringify(courses[i].contents)],
-  //     ])
-  //     const b_skillsHeading = this.generateHeading('Intended Learning Outcomes', 4)
-  //     const b_skillsText = this.markdownParser.parse('By the end of the course the student will have gained the following skills:')
-  //     const b_skillsTable = this.generateTable([
-  //       ['Knowledge and Understanding', this.exportHelper.stringify(courses[i].skills_knowledge_understanding)],
-  //       ['Intellectual Skills', this.exportHelper.stringify(courses[i].skills_intellectual)],
-  //       ['Professional and Practical Skills', this.exportHelper.stringify(courses[i].skills_practical)],
-  //       ['General and Transferrable Skills', this.exportHelper.stringify(courses[i].skills_general)],
-  //     ])
-  //     const b_methodsHeading = this.generateHeading('Learning and Teaching Methods', 4)
-  //     const b_methodsText = this.markdownParser.parse(this.exportHelper.stringify(courses[i].methods))
-  //     const b_facilitiesHeading = this.generateHeading('Facilities required for teaching & learning', 4)
-  //     const b_facilitiesTable = this.generateTable([
-  //       ['Equipment', this.exportHelper.stringify(courses[i].equipment)],
-  //       ['Rooms', this.exportHelper.stringify(courses[i].equipment)],
-  //     ])
-  //     const b_assessmentHeading = this.generateHeading('Assessment', 4)
-  //     const b_assessmentText = this.markdownParser.parse(this.exportHelper.stringify(courses[i].examination))
-  //     const b_referencesHeading = this.generateHeading('References', 4)
-  //     const b_referencesText = this.markdownParser.parse(this.exportHelper.stringify(courses[i].literature))
-  //     const c_administrativeInformation = this.generateHeading('C - Administrative Information', 3)
-  //     const c_coordinatorHeading = this.generateHeading('Course Coordinator Contact Information', 4)
-  //     const c_coordinatorTable = this.generateTable([
-  //       ['Course Coordinator', '-'], //exportHelper.stringify(courses[i].mission)],
-  //       ['E-mail', '-'], //exportHelper.stringify(courses[i].mission)],
-  //       ['Telephone', '-'], //exportHelper.stringify(courses[i].mission)],
-  //       ['Extension', '-'], //exportHelper.stringify(courses[i].mission)],
-  //     ])
-  //
-  //     course_infos = `
-  //     ${course_infos}
-  //     ${courseName}
-  //     ${a_BasicInformation}
-  //     ${a_basicsTable}
-  //     ${b_professionalInformation}
-  //     ${b_aimsHeading}
-  //     ${b_aimsTable}
-  //     ${b_skillsHeading}
-  //     ${b_skillsText}
-  //     ${b_skillsTable}
-  //     ${b_methodsHeading}
-  //     ${b_methodsText}
-  //     ${b_facilitiesHeading}
-  //     ${b_facilitiesTable}
-  //     ${b_assessmentHeading}
-  //     ${b_assessmentText}
-  //     ${b_referencesHeading}
-  //     ${b_referencesText}
-  //     ${c_administrativeInformation}
-  //     ${c_coordinatorHeading}
-  //     ${c_coordinatorTable}
-  //     ${this.generatePageBreak()}
-  //     `
-  //   }
-  //   return course_infos
-  // }
-
   generateTable(contents) {
     var table = '<table style="width:100%">' // open table
     for (var i = 0; i < contents.length; i++) { // greate rows
@@ -247,9 +152,6 @@ class DocxExporter {
       table = table + '\n</tr>' // end row
     }
     table = table + '\n</table>' // end table
-    // if (table.includes('<li>')) {
-    //   console.log(table)
-    // }
     return table
   }
 
@@ -272,8 +174,5 @@ class DocxExporter {
   }
 
 }
-
-
-
 
 module.exports = DocxExporter
