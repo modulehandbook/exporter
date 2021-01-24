@@ -15,7 +15,6 @@ class DocxGeneratorProxy {
     HTMLtoDOCX(htmlString, headerHTMLString, {
       table: { row: { cantSplit: true } },
       header: true,
-
       footer: true,
       pageNumber: true,
     }).then((buffer) => {

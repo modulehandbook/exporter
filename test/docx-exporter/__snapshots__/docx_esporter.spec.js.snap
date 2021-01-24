@@ -1,0 +1,1040 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`docxExporter.generateCourseComponents generates the course info pages 1`] = `
+"
+      
+      
+      
+      
+      
+      
+      
+      <h2 id=\\"mandatory1\\">Mandatory 1</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>MANA 1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>2.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>6</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>None</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>Students have basic knowledge of mandatory stuff.</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>Teach the students something.</p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <p>Basics:</p>
+<ul>
+<li>mandatory things</li>
+<li>more mandatory things</li>
+<li>even more mandatory things</li>
+</ul>
+<p>Fundamentals of Amazingness:</p>
+<ul>
+<li>amazing things</li>
+<li>history of amazing things</li>
+</ul>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills.</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>-</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>Basic lab</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>Lab</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>-</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>Amazing people,
+Amazing title
+Amazing publisher, 20amazing 
+ISBN: 4m4z1ng
+eBook ISBN: 4m4z1ng</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"someothercourse\\">Some other Course</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>SOC 404</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>4.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>6</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>None</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>-</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>The objectives of the course</p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <ul>
+<li><p>content 1</p></li>
+<li><p>content 2 </p></li>
+<li><p>content 3</p></li>
+<li><p>content 4</p></li>
+<li><p>content 5</p></li>
+<li><p>content 6</p></li>
+<li><p>content 7</p></li>
+<li><p>content 8</p></li>
+<li><p>content 9</p></li>
+<li><p>content 10</p></li>
+<li><p>content 11</p></li>
+<li><p>content 12</p></li>
+<li><p>content 13</p></li>
+<li><p>content 14</p></li>
+<li><p>content 15</p></li>
+<li><p>content 16</p></li>
+</ul>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills:</p>
+<ul>
+<li>skill 1</li>
+<li>skill 2</li>
+<li>skill 3</li>
+<li>skill 4</li>
+<li>skill 5</li>
+<li>skill 6</li>
+<li>skill 7</li>
+<li>skill 8</li>
+</ul>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>ein paar coole unterrichtsmethoden</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>-</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>Mid term plus quizzes plus exam</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>some cool books</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"somethingimportand\\">Something Importand</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>SI 101</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>3.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>5</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>None</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>To teach the students something important</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>Students learn the fundamentals of something important</p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <ul>
+<li>content 1.</li>
+<li>content 2.</li>
+<li>content 3.</li>
+<li>content 4.</li>
+<li>content 5.</li>
+<li>content 5.</li>
+</ul>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>important teaching methods</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>-</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>Mid term and exam</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>[1] Book1 author
+Book1 title
+Book1 content
+Book1 toc</p>
+<p>[2] Book2 author
+Book2 title
+Book2 toc</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"somethingsomethingelse\\">Something &amp; Something else</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>1</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>SSE 201</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>1.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>2</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>None</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>Mission imposible.</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>teach the students something and something else. </p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <p>content 1
+content 2
+content 3
+content 4 
+content 5 &amp; 6
+content 7 &amp; 8</p>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills,
+some more knowledge and understanding skills,
+some more knowledge and understanding skills,
+some more knowledge and understanding skills</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills,
+some more intellectual skills,
+some more intellectual skills,
+some more intellectual skills,
+some more intellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills,
+some more practical skills,
+some more practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>fancy teaching methods</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>Production Workshop</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>Midterm    25%
+Final    40%</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>•    Ein tolles Buch zum lesen</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"morethings\\">More things</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>3</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>2</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>MT301</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>0.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>2</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>-</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>Teach students more things.</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>-</p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <p>Things: </p>
+<ul>
+<li>Thing 1</li>
+<li>Thing 2</li>
+<li>Thing 3</li>
+<li>Thing 4</li>
+<li>Thing 5</li>
+<li>Thing 6 &amp; 7</li>
+</ul>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>-</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>-</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>-</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>-</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"amazingthesiswithseminar\\">Amazing Thesis with seminar</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>8</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>4</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>0.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>15</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>-</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>-</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>-</p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <p>-</p>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>-</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>-</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>-</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>-</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>-</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>-</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>-</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>-</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      <h2 id=\\"namethatdoesntexistyet\\">Name that doesnt exist yet</h2>
+      <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Semester</p>
+        </td>
+        <td>
+          <p>3</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Year</p>
+        </td>
+        <td>
+          <p>2</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Type</p>
+        </td>
+        <td>
+          <p>mandatory</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Weekly contact hours</p>
+        </td>
+        <td>
+          <p>0.0</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>5</p>
+        </td>
+</tr>
+</table>
+      <h5 id=\\"prerequisites\\">Prerequisites</h5>
+    <p>-</p>
+      <h3 id=\\"bprofessionalinformation\\">B - Professional Information</h3>
+      <h4 id=\\"aims\\">Aims</h4>
+      <h5 id=\\"mission\\">Mission</h5>
+    <p>-</p>
+      <h5 id=\\"objectives\\">Objectives</h5>
+    <p>Some objectives of the course. </p>
+      <h5 id=\\"contents\\">Contents</h5>
+    <ul>
+<li>Thing 1</li>
+<li>Thing 2</li>
+<li>Thing 3</li>
+<li>Thing 4</li>
+<li>Thing 5</li>
+<li>Thing 6</li>
+<li>Thing 7</li>
+</ul>
+      <h4 id=\\"intendedlearningoutcomes\\">Intended Learning Outcomes</h4>
+    <p>By the end of the course the student will have gained the following skills:</p>
+      <h5 id=\\"knowledgeandunderstanding\\">Knowledge and Understanding</h5>
+    <p>Students have knowledge and understanding skills</p>
+      <h5 id=\\"intellectualskills\\">Intellectual Skills</h5>
+    <p>Students have inellectual skills.</p>
+      <h5 id=\\"professionalandpracticalskills\\">Professional and Practical Skills</h5>
+    <p>Students have practical skills.</p>
+      <h5 id=\\"generalandtransferrableskills\\">General and Transferrable Skills</h5>
+    <p>Students have general skills.</p>
+      <h4 id=\\"learningandteachingmethods\\">Learning and Teaching Methods</h4>
+    <p>a few more fancy methods</p>
+      <h4 id=\\"facilitiesrequiredforteachinglearning\\">Facilities required for teaching &amp; learning</h4>
+      <h5 id=\\"equipment\\">Equipment</h5>
+    <p>-</p>
+      <h5 id=\\"rooms\\">Rooms</h5>
+    <p>-</p>
+      <h4 id=\\"assessment\\">Assessment</h4>
+    <p>Exams during Lab Course</p>
+      <h4 id=\\"references\\">References</h4>
+    <p>Books to read</p>
+      <h3 id=\\"cadministrativeinformation\\">C - Administrative Information</h3>
+      <h4 id=\\"coursecoordinatorcontactinformation\\">Course Coordinator Contact Information</h4>
+      <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Course Coordinator</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>E-mail</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Telephone</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Extension</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
+      <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      "
+`;
+
+exports[`docxExporter.generateProgramComponents generates the program info overview 1`] = `
+"<h1 id=\\"amazingdemoprogram\\">Amazing Demo Program</h1>
+    <h3 id=\\"programinfos\\">Program Infos</h3>
+    <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>Code</p>
+        </td>
+        <td>
+          <p>ADP</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>Degree</p>
+        </td>
+        <td>
+          <p>B. Eng.</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>ECTS</p>
+        </td>
+        <td>
+          <p>240</p>
+        </td>
+</tr>
+</table>
+    <h5 id=\\"mission\\">Mission</h5>
+    <p>This is an amazing demo program to demo the docx exporter</p>
+    <h5 id=\\"listofcourses\\">List of Courses</h5>
+    <ul>
+<li>Mandatory 1
+</li>
+<li>Some other Course</li>
+<li>Something Importand</li>
+<li>Something & Something else</li>
+<li>More things</li>
+<li>Amazing Thesis with seminar</li>
+<li>Name that doesnt exist yet</li>
+
+</ul>
+    <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>"
+`;
+
+exports[`docxExporter.generateTable generates a table with 1 row, 2 cells 1`] = `
+"<table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>row1, cell1</p>
+        </td>
+        <td>
+          <p>row1, cell2</p>
+        </td>
+</tr>
+</table>"
+`;
+
+exports[`docxExporter.generateTable generates a table with 1 row, 3 cells 1`] = `
+"<table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>row1, cell1</p>
+        </td>
+        <td>
+          <p>row1, cell2</p>
+        </td>
+        <td>
+          <p>row1, cell3</p>
+        </td>
+</tr>
+</table>"
+`;
+
+exports[`docxExporter.generateTable generates a table with 2 rows, 2 cells 1`] = `
+"<table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>row1, cell1</p>
+        </td>
+        <td>
+          <p>row1, cell2</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>row2, cell1</p>
+        </td>
+        <td>
+          <p>row2, cell2</p>
+        </td>
+</tr>
+</table>"
+`;
