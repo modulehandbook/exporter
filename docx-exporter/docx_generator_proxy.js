@@ -1,10 +1,6 @@
 const HTMLtoDOCX = require('html-to-docx')
 const fs = require('fs')
-// const mdParse = SimpleMarkdown.defaultBlockParse
-// module.exports = mdParse
 
-// TODO: parameter überprüfen!
-// TODO: TESTs für methoden die noch keine eigenen haben
 class DocxGeneratorProxy {
   constructor() {
     this.generator = HTMLtoDOCX
