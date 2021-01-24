@@ -1,137 +1,178 @@
 const DocxGeneratorProxy = require('./docx_generator_proxy')
-const MdDocxTranslator = require('./md_docx_translator')
+const MarkdownParserProxy = require('./markdown_parser_proxy')
 const ExportHelper = require('../helper/export_helper')
 
 
 class DocxExporter {
   constructor() {
     this.docxGenerator = new DocxGeneratorProxy()
-    this.mdDocxTranslator = new MdDocxTranslator()
+    this.markdownParser = new MarkdownParserProxy()
     this.exportHelper = new ExportHelper()
   }
 
   exportProgram(filename, program_data, callBack) {
-    // Create document
-    const doc = this.docxGenerator.generateDoc('./styles/docx/styles.xml', 'utf-8')
+    // const doc = this.docxGenerator.generateDoc('./styles/docx/styles.xml', 'utf-8')
     const program_name_and_code = program_data.name + ' [' + program_data.code + ']'
-    const header = this.docxGenerator.generateHeader('Module Descriptions GIU, ' + program_name_and_code)
-    const footer = this.docxGenerator.generateFooter()
-    const toc = this.docxGenerator.generateTOC('Courses')
+    const header = '<p>Module Descriptions GIU, ' + program_name_and_code + '</p>'
 
     const program_infos = this.generateProgramComponents(program_data)
     const course_infos = this.generateCourseComponents(program_data)
-    const contents = program_infos.concat(toc.concat(course_infos))
 
-    this.docxGenerator.assembleDocument(doc, header, footer, contents)
-    this.docxGenerator.saveFile(doc, filename, callBack)
+    const doc = `<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <title>${filename}</title>
+        </head>
+        <body>
+        ${program_infos}
+        ${course_infos}
+        </body>
+    </html>`
+
+    this.docxGenerator.saveFile(doc, header, filename, callBack)
   }
 
   generateProgramComponents(program_data) {
-    var program = [
-      this.docxGenerator.generateHeading(program_data.name, 1),
-      this.docxGenerator.generateHeading('Program Infos', 3),
-      this.docxGenerator.generateTable([
-        ['Code', this.exportHelper.stringify(program_data.code)],
-        ['Degree', this.exportHelper.stringify(program_data.degree)],
-        ['ECTS', this.exportHelper.stringify(program_data.ects)],
-        ['Mission', this.exportHelper.stringify(program_data.mission)],
-      ]),
-      this.docxGenerator.generatePageBreak(),
-    ]
-    return program
-  }
+    const programHeading = this.generateHeading(program_data.name, 1)
+    const programInfosHeading = this.generateHeading('Program Infos', 3)
+    const programInfosTable = this.generateTable([
+      ['Code', this.exportHelper.stringify(program_data.code)],
+      ['Degree', this.exportHelper.stringify(program_data.degree)],
+      ['ECTS', this.exportHelper.stringify(program_data.ects)],
+    ])
+    const missionHeading = this.generateHeading('Mission', 5)
+    const missionText = this.markdownParser.parse(this.exportHelper.stringify(program_data.mission))
 
-  addMDElements(course, elements) {
-    for (var j = 0; j < elements.length; j++) {
-      if (Array.isArray(elements[j])) {
-        // console.log('found an array')
-        course = this.addMDElements(course, elements[j])
-      } else {
-        // console.log('found no array')
-        course.push(elements[j])
-      }
+    const listOfCoursesHeading = this.generateHeading('List of Courses', 5)
+    var listOfCourses = '<ul>\n'
+    const courses = program_data.courses
+    for(var i = 0; i < courses.length; i++) {
+      listOfCourses = listOfCourses + `<li>${courses[i].name}</li>\n`
     }
-    return course
+    listOfCourses = listOfCourses + '\n</ul>'
+
+    return `${programHeading}
+    ${programInfosHeading}
+    ${programInfosTable}
+    ${missionHeading}
+    ${missionText}
+    ${listOfCoursesHeading}
+    ${listOfCourses}
+    ${this.generatePageBreak()}`
   }
 
   generateCourseComponents(program_data) {
-  // const md = this.mdDocxTranslator.translate(program_data.name)
-  // program = this.addMDElements(program, md)
-    var course_infos = []
+    var course_infos = ''
     const courses = program_data.courses
-    var i
-    for(i = 0; i < courses.length; i++) {
-      var course = [
-        this.docxGenerator.generateHeading(courses[i].name, 2),
-        this.docxGenerator.generateHeading('A - Basic Information', 3),
-        this.docxGenerator.generateTable([
-          ['Semester', this.exportHelper.stringify(courses[i].semester)],
-          ['Year', this.exportHelper.stringify(Math.ceil(courses[i].semester/2))],
-          ['Code', this.exportHelper.stringify(courses[i].code)],
-          ['Type', this.exportHelper.stringify(courses[i].required)],
-          ['Weekly contact hours', this.exportHelper.stringify(courses[i].lectureHrs)],
-          ['ECTS', this.exportHelper.stringify(courses[i].ects)],
-          ['Prerequisites', this.mdDocxTranslator.translate(courses[i].prerequisites)],
-        ]),
-        this.docxGenerator.generateHeading('B - Professional Information', 3),
-        this.docxGenerator.generateHeading('Aims', 4),
-        this.docxGenerator.generateTable([
-          ['Mission', this.mdDocxTranslator.translate(courses[i].mission)], // translate
-          ['Objectives', this.mdDocxTranslator.translate(courses[i].objectives)], // translate
-          ['Contents', this.exportHelper.stringify(courses[i].contents)], // translate
-        ]),
-        this.docxGenerator.generateHeading('Intended Learning Outcomes', 4),
-        this.docxGenerator.generateParagraph('By the end of the course the student will have gained the following skills:'),
-      ]
-
-      this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].contents)) // translate
-
-      this.addMDElements(course, [this.docxGenerator.generateText('Knowledge and Understanding: ', true)]) // translate
-      this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].skills_knowledge_understanding)) // translate
-
-      this.addMDElements(course, [
-        this.docxGenerator.generateTable([
-          ['Knowledge and Understanding', this.exportHelper.stringify(courses[i].skills_knowledge_understanding)], // translate
-          ['Intellectual Skills', this.exportHelper.stringify(courses[i].skills_intellectual)], // translate
-          ['Professional and Practical Skills', this.exportHelper.stringify(courses[i].skills_practical)], // translate
-          ['General and Transferrable Skills', this.exportHelper.stringify(courses[i].skills_general)], // translate
-        ]),
-        this.docxGenerator.generateHeading('Learning and Teaching Methods', 4),
+    for(var i = 0; i < courses.length; i++) {
+      const courseName = this.generateHeading(courses[i].name, 2)
+      const a_BasicInformation = this.generateHeading('A - Basic Information', 3)
+      const a_basicsTable = this.generateTable([
+        ['Semester', this.exportHelper.stringify(courses[i].semester)],
+        ['Year', this.exportHelper.stringify(Math.ceil(courses[i].semester/2))],
+        ['Code', this.exportHelper.stringify(courses[i].code)],
+        ['Type', this.exportHelper.stringify(courses[i].required)],
+        ['Weekly contact hours', this.exportHelper.stringify(courses[i].lectureHrs)],
+        ['ECTS', this.exportHelper.stringify(courses[i].ects)],
       ])
-      this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].methods)) // translate
-      this.addMDElements(course, [
-        this.docxGenerator.generateHeading('Facilities required for teaching & learning', 4),
-        this.docxGenerator.generateTable([
-          ['Equipment', this.exportHelper.stringify(courses[i].equipment)], // translate
-          ['Rooms', this.exportHelper.stringify(courses[i].equipment)], // translate
-        ]),
-        this.docxGenerator.generateHeading('Assessment', 4),
-      ])
-      this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].examination)) // translate
-      this.addMDElements(course, [this.docxGenerator.generateHeading('References', 4)])
-      this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].literature))
-      this.addMDElements(course, [
-        this.docxGenerator.generateHeading('C - Administrative Information', 3),
-        this.docxGenerator.generateHeading('Course Coordinator Contact Information', 4),
-        this.docxGenerator.generateTable([
-          ['Course Coordinator', '-'], //exportHelper.stringify(courses[i].mission)],
-          ['E-mail', '-'], //exportHelper.stringify(courses[i].mission)],
-          ['Telephone', '-'], //exportHelper.stringify(courses[i].mission)],
-          ['Extension', '-'], //exportHelper.stringify(courses[i].mission)],
-        ]),
-        this.docxGenerator.generatePageBreak(),
+      const a_prerequisites = this.generateHeadingWithText('Prerequisites', 5, courses[i].prerequisites)
+
+      const b_professionalInformation = this.generateHeading('B - Professional Information', 3)
+      const b_aimsHeading = this.generateHeading('Aims', 4)
+      const b_mission = this.generateHeadingWithText('Mission', 5, courses[i].mission)
+      const b_objectives = this.generateHeadingWithText('Objectives', 5, courses[i].objectives)
+      const b_contents = this.generateHeadingWithText('Contents', 5, courses[i].contents)
+
+      const b_outcomes = this.generateHeadingWithText('Intended Learning Outcomes', 4, 'By the end of the course the student will have gained the following skills:')
+      const b_skillsKU = this.generateHeadingWithText('Knowledge and Understanding', 5, courses[i].skills_knowledge_understanding)
+      const b_skillsIN = this.generateHeadingWithText('Intellectual Skills', 5, courses[i].skills_intellectual)
+      const b_skillsP = this.generateHeadingWithText('Professional and Practical Skills', 5, courses[i].skills_practical)
+      const b_skillsG = this.generateHeadingWithText('General and Transferrable Skills', 5, courses[i].skills_general)
+
+      const b_methods = this.generateHeadingWithText('Learning and Teaching Methods', 4, courses[i].methods)
+
+      const b_facilitiesHeading = this.generateHeading('Facilities required for teaching & learning', 4)
+      const b_equipment = this.generateHeadingWithText('Equipment', 5, courses[i].equipment)
+      const b_rooms = this.generateHeadingWithText('Rooms', 5, courses[i].room)
+
+      const b_assessment = this.generateHeadingWithText('Assessment', 4, courses[i].examination)
+      const b_references = this.generateHeadingWithText('References', 4, courses[i].literature)
+
+      const c_administrativeInformation = this.generateHeading('C - Administrative Information', 3)
+      const c_coordinatorHeading = this.generateHeading('Course Coordinator Contact Information', 4)
+      const c_coordinatorTable = this.generateTable([
+        ['Course Coordinator', '-'], //exportHelper.stringify(courses[i].mission)],
+        ['E-mail', '-'], //exportHelper.stringify(courses[i].mission)],
+        ['Telephone', '-'], //exportHelper.stringify(courses[i].mission)],
+        ['Extension', '-'], //exportHelper.stringify(courses[i].mission)],
       ])
 
-      //console.log(this.mdDocxTranslator.translate(courses[i].contents))
-      const element = this.addMDElements(course, this.mdDocxTranslator.translate(courses[i].contents))
-      course_infos = course_infos.concat(course)
+      course_infos = `
+      ${course_infos}
+      ${courseName}
+      ${a_BasicInformation}
+      ${a_basicsTable}
+      ${a_prerequisites}
+      ${b_professionalInformation}
+      ${b_aimsHeading}
+      ${b_mission}
+      ${b_objectives}
+      ${b_contents}
+      ${b_outcomes}
+      ${b_skillsKU}
+      ${b_skillsIN}
+      ${b_skillsP}
+      ${b_skillsG}
+      ${b_methods}
+      ${b_facilitiesHeading}
+      ${b_equipment}
+      ${b_rooms}
+      ${b_assessment}
+      ${b_references}
+      ${c_administrativeInformation}
+      ${c_coordinatorHeading}
+      ${c_coordinatorTable}
+      ${this.generatePageBreak()}
+      `
     }
     return course_infos
   }
 
+  generateTable(contents) {
+    var table = '<table style="width:100%">' // open table
+    for (var i = 0; i < contents.length; i++) { // greate rows
+      table = table + '\n<tr>'
+      for (var j = 0; j < contents[i].length; j++) { // create cells
+        table = `${table}
+        <td>
+          ${this.markdownParser.parse(contents[i][j])}
+        </td>`
+      }
+      table = table + '\n</tr>' // end row
+    }
+    table = table + '\n</table>' // end table
+    return table
+  }
+
+  generatePageBreak() {
+    return '<div class="page-break" style="page-break-after: always"></div>'
+  }
+
+  generateHeading(text, level) {
+   var heading = ''
+   for (var i = 0; i < level; i++) {
+     heading = heading + '#'
+   }
+   heading = `${heading} ${text}`
+   return this.markdownParser.parse(heading)
+  }
+
+  generateHeadingWithText(headingText, level, text) {
+    return `${this.generateHeading(headingText, level)}
+    ${this.markdownParser.parse(this.exportHelper.stringify(text))}`
+  }
+
 }
-
-
-
 
 module.exports = DocxExporter

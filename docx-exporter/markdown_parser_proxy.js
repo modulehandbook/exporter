@@ -1,14 +1,17 @@
-const SimpleMarkdown = require("simple-markdown")
+const Showdown = require("showdown")
 // const mdParse = SimpleMarkdown.defaultBlockParse
 // module.exports = mdParse
 
 class MarkdownParserProxy {
   constructor() {
-    this.parser = SimpleMarkdown.defaultBlockParse
+    this.converter = new Showdown.Converter()
   }
 
   parse(markdown) {
-    return this.parser(markdown)
+    if (markdown == '') {
+      markdown = '-'
+    }
+    return this.converter.makeHtml(markdown)
   }
 }
 
