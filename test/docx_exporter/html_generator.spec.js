@@ -1,4 +1,4 @@
-const HtmlGenerator = require('../../docx-exporter/html_generator')
+const HtmlGenerator = require('../../docx_exporter/html_generator')
 const htmlGenerator = new HtmlGenerator()
 
 

@@ -1,4 +1,4 @@
-const DocxExporter = require('../../docx-exporter/docx-export')
+const DocxExporter = require('../../docx_exporter/docx_export')
 const docxExporter = new DocxExporter()
 const program = require('../data/program')
 

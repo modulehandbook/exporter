@@ -1,5 +1,5 @@
 {
-  "name": "docx-exporter",
+  "name": "docx_exporter",
   "version": "1.0.0",
   "description": "export for module descriptions from json to docx",
   "main": "index.js",

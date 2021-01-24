@@ -2,7 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const path = require('path')
 const app = express()
-//const exporter = require('./exporter/docx-export')
+//const exporter = require('./exporter/docx_export')
 const helmet = require('helmet')
 const router = require('./router')
 
