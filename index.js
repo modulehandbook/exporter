@@ -1,18 +1,7 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const path = require('path')
-const app = express()
-const port = process.env.PORT || 3030
-//const exporter = require('./exporter/docx-export')
-const helmet = require('helmet')
-const router = require('./router')
+const app = require('./app')
 
-app.use(helmet())
+app.set("port", process.env.PORT || 3030);
 
-app.listen(port, () => {
-  console.log(`exporter listening at http://localhost:${port}`)
+app.listen(app.get("port"), () => {
+  console.log(`exporter listening at http://localhost:${app.get("port")}`)
 })
-
-app.use('/', router)
-
-module.exports = app

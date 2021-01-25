@@ -1,19 +1,31 @@
 'use strict'
-const docx_exporter = require('../docx-exporter/docx-export')
+const DocxExporter = require('../docx_exporter/docx_export')
+const ExportHelper = require('../helper/export_helper')
+const docxExporter = new DocxExporter()
+const exportHelper = new ExportHelper()
+const program = require('../test/data/program')
 
-exports.program = (req, res) => {
-  const program_data = req.body
-  const code = program_data.code ? program_data.code.split(' ').join('') : 'XX'
-  const name = program_data.code ? program_data.name.split(' ').join('') : 'xxx'
-  const date_today = new Date().toJSON().slice(0,10);
-  const filename = 'files/' + date_today + '_' + code + '-' + name + '.docx'
-
-  docx_exporter.export_program(filename, program_data, () => {
-    res.download(filename, function(err){
-      if (err) {
-        throw err
-      }
+module.exports = {
+  program: (req, res) => {
+    const program_data = req.body
+    const filename = exportHelper.assembleFilename(program_data)
+    docxExporter.exportProgram(filename, program_data, () => {
+      res.download(filename, function(err){
+        if (err) {
+          throw err
+        }
+      })
     })
-  })
-
+  },
+  demo: (req, res) => {
+    const program_data = program
+    const filename = exportHelper.assembleFilename(program_data)
+    docxExporter.exportProgram(filename, program_data, () => {
+      res.download(filename, function(err){
+        if (err) {
+          throw err
+        }
+      })
+    })
+  }
 }
