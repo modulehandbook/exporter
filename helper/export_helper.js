@@ -1,9 +1,11 @@
 class ExportHelper {
   stringify(input) {
     if (typeof input === 'string') {
-      var output = (input === null || input === undefined) ? '' : input
+      var output = input
     } else if (typeof input === 'number') {
       var output = '' + input
+    } else {
+      var output = '-'
     }
     return output
   }

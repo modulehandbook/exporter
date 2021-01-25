@@ -49,7 +49,7 @@ exports[`docxExporter.generateCourseComponents generates the course info pages 1
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>2.0</p>
+          <p>2.0 hrs Lecture/Week, 2.0 hrs Tutorial/Week, 2.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -114,7 +114,7 @@ eBook ISBN: 4m4z1ng</p>
           <p>Course Coordinator</p>
         </td>
         <td>
-          <p>-</p>
+          <p>Somone Responsible</p>
         </td>
 </tr>
 <tr>
@@ -184,7 +184,7 @@ eBook ISBN: 4m4z1ng</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>4.0</p>
+          <p>4.0 hrs Lecture/Week, 0.0 hrs Tutorial/Week, 2.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -332,7 +332,7 @@ eBook ISBN: 4m4z1ng</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>3.0</p>
+          <p>3.0 hrs Lecture/Week, 2.0 hrs Tutorial/Week, 0.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -466,7 +466,7 @@ Book2 toc</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>1.0</p>
+          <p>1.0 hrs Lecture/Week, 0.0 hrs Tutorial/Week, 2.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -602,7 +602,7 @@ Final    40%</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>0.0</p>
+          <p>0.0 hrs Lecture/Week, 4.0 hrs Tutorial/Week, 0.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -731,7 +731,7 @@ Final    40%</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>0.0</p>
+          <p>0.0 hrs Lecture/Week, 0.0 hrs Tutorial/Week, 0.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -852,7 +852,7 @@ Final    40%</p>
           <p>Weekly contact hours</p>
         </td>
         <td>
-          <p>0.0</p>
+          <p>0.0 hrs Lecture/Week, 0.0 hrs Tutorial/Week, 4.0 hrs Lab/Week</p>
         </td>
 </tr>
 <tr>
@@ -975,16 +975,84 @@ exports[`docxExporter.generateProgramComponents generates the program info overv
     <h5 id=\\"mission\\">Mission</h5>
     <p>This is an amazing demo program to demo the docx exporter</p>
     <h5 id=\\"listofcourses\\">List of Courses</h5>
-    <ul>
-<li>Mandatory 1
-</li>
-<li>Some other Course</li>
-<li>Something Importand</li>
-<li>Something & Something else</li>
-<li>More things</li>
-<li>Amazing Thesis with seminar</li>
-<li>Name that doesnt exist yet</li>
-
-</ul>
+    <table style=\\"width:100%\\">
+<tr>
+        <td>
+          <p>MANA 1</p>
+        </td>
+        <td>
+          <p>Mandatory 1</p>
+        </td>
+        <td>
+          <p>Somone Responsible</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>SOC 404</p>
+        </td>
+        <td>
+          <p>Some other Course</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>SI 101</p>
+        </td>
+        <td>
+          <p>Something Importand</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>SSE 201</p>
+        </td>
+        <td>
+          <p>Something &amp; Something else</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>MT301</p>
+        </td>
+        <td>
+          <p>More things</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>-</p>
+        </td>
+        <td>
+          <p>Amazing Thesis with seminar</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+<tr>
+        <td>
+          <p>-</p>
+        </td>
+        <td>
+          <p>Name that doesnt exist yet</p>
+        </td>
+        <td>
+          <p>-</p>
+        </td>
+</tr>
+</table>
     <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>"
 `;

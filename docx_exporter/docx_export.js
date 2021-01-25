@@ -46,21 +46,25 @@ class DocxExporter {
     const missionHeading = this.htmlGenerator.generateHeading('Mission', 5)
     const missionText = this.markdownParser.parse(this.exportHelper.stringify(program_data.mission))
 
-    const listOfCoursesHeading = this.htmlGenerator.generateHeading('List of Courses', 5)
-    var listOfCourses = '<ul>\n'
+    const coursesHeading = this.htmlGenerator.generateHeading('List of Courses', 5)
+    var listOfCourses = []
     const courses = program_data.courses
     for(var i = 0; i < courses.length; i++) {
-      listOfCourses = listOfCourses + `<li>${courses[i].name}</li>\n`
+      listOfCourses.push([
+        this.exportHelper.stringify(courses[i].code),
+        this.exportHelper.stringify(courses[i].name),
+        this.exportHelper.stringify(courses[i].responsible_person)
+      ])
     }
-    listOfCourses = listOfCourses + '\n</ul>'
+    const coursesTable = this.htmlGenerator.generateTable(listOfCourses)
 
     return `${programHeading}
     ${programInfosHeading}
     ${programInfosTable}
     ${missionHeading}
     ${missionText}
-    ${listOfCoursesHeading}
-    ${listOfCourses}
+    ${coursesHeading}
+    ${coursesTable}
     ${this.htmlGenerator.generatePageBreak()}`
   }
 
@@ -70,12 +74,16 @@ class DocxExporter {
     for(var i = 0; i < courses.length; i++) {
       const courseName = this.htmlGenerator.generateHeading(courses[i].name, 2)
       const a_BasicInformation = this.htmlGenerator.generateHeading('A - Basic Information', 3)
+      const lectureHrs = this.exportHelper.stringify(courses[i].lectureHrs)
+      const tutorialHrs = this.exportHelper.stringify(courses[i].tutorialHrs)
+      const labHrs = this.exportHelper.stringify(courses[i].labHrs)
+      const contactHours = lectureHrs + ' hrs Lecture/Week, ' + tutorialHrs + ' hrs Tutorial/Week, ' + labHrs + ' hrs Lab/Week'
       const a_basicsTable = this.htmlGenerator.generateTable([
         ['Semester', this.exportHelper.stringify(courses[i].semester)],
         ['Year', this.exportHelper.stringify(Math.ceil(courses[i].semester/2))],
         ['Code', this.exportHelper.stringify(courses[i].code)],
         ['Type', this.exportHelper.stringify(courses[i].required)],
-        ['Weekly contact hours', this.exportHelper.stringify(courses[i].lectureHrs)],
+        ['Weekly contact hours', contactHours],
         ['ECTS', this.exportHelper.stringify(courses[i].ects)],
       ])
       const a_prerequisites = this.htmlGenerator.generateHeadingWithText('Prerequisites', 5, courses[i].prerequisites)
@@ -104,7 +112,7 @@ class DocxExporter {
       const c_administrativeInformation = this.htmlGenerator.generateHeading('C - Administrative Information', 3)
       const c_coordinatorHeading = this.htmlGenerator.generateHeading('Course Coordinator Contact Information', 4)
       const c_coordinatorTable = this.htmlGenerator.generateTable([
-        ['Course Coordinator', '-'], //exportHelper.stringify(courses[i].mission)],
+        ['Course Coordinator', this.exportHelper.stringify(courses[i].responsible_person)],
         ['E-mail', '-'], //exportHelper.stringify(courses[i].mission)],
         ['Telephone', '-'], //exportHelper.stringify(courses[i].mission)],
         ['Extension', '-'], //exportHelper.stringify(courses[i].mission)],

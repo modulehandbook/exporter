@@ -17,7 +17,7 @@ app.use(bodyParser.json({
 
 app.use(bodyParser.urlencoded({
   limit: '50mb',
-  parameterLimit: 100000000,
+  parameterLimit: 1000000,
   extended: true
 }))
 
