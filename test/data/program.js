@@ -40,6 +40,7 @@ const program = {
       tutorialHrs: "2.0",
       equipment: "Basic lab",
       room: "Lab",
+      responsible_person: "Somone Responsible"
     },
     {
       semester: 1,
