@@ -13,7 +13,9 @@
     "express": "^4.17.1",
     "helmet": "^4.2.0",
     "html-to-docx": "^1.1.33",
-    "showdown": "^1.9.1"
+    "lodash": "^4.17.20",
+    "showdown": "^1.9.1",
+    "xlsx": "^0.16.9"
   },
   "engines": {
     "node": "12.16.1"
