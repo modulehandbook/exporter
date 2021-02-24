@@ -5,16 +5,17 @@ const { decode } = require('querystring');
 const XLSX = require('xlsx');
 /* equivalent to `var wb = XLSX.readFile("sheetjs.xlsx");` */
 
-module.exports.xlsx2ModuleList = function xlsx2ModuleList(config, data) {
+module.exports.xlsx2ModuleList = function xlsx2ModuleList(config) {
   // console.log('config', config);
-  console.log(data);
+  // console.log(data);
+  var buf = fs.readFileSync(config.xlsx);
 
-  var wb = XLSX.read(data, { type: 'buffer' });
-  console.log(wb);
+  var wb = XLSX.read(buf, { type: 'buffer' });
+  // console.log(wb);
 
   //calculating the number or rows on the sheet
   var sheet_name_list = wb.SheetNames;
-  console.log(sheet_name_list);
+  // console.log(sheet_name_list);
   let count = [];
   for (var sheetIndex = 0; sheetIndex < sheet_name_list.length; sheetIndex++) {
     var worksheet = wb.Sheets[sheet_name_list[sheetIndex]];
@@ -27,7 +28,7 @@ module.exports.xlsx2ModuleList = function xlsx2ModuleList(config, data) {
   const rowCount = count[0].data_count - 1; //minus one to subtract the headings
   console.log('rowCount', rowCount);
 
-  console.log('Sheets', wb.Sheets);
+  // console.log('Sheets', wb.Sheets);
   const sheet = wb.Sheets[config.sheetName];
 
   if (sheet === undefined) {
