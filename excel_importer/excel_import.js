@@ -1,5 +1,5 @@
 class ExcelImport {
-  doSomething() {
+  doSomething(data) {
     const planungSoSe21 = {
       sheetName: 'Gesamt',
       xlsx: 'Lehrplanung_01.02.2021.xls'
@@ -8,7 +8,7 @@ class ExcelImport {
     const { xlsx2ModuleList } = require('./xlsxScanner');
     const { htw2uas, groupModules, extractAndMap } = require('./schemaConverter');
 
-    const sose21 = xlsx2ModuleList(planungSoSe21);
+    const sose21 = xlsx2ModuleList(planungSoSe21, data);
     const prettifiedSoSe21 = sose21.map((m) => htw2uas(m)).reduce(groupModules, {});
 
     const fieldMapping = {

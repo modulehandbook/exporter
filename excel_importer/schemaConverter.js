@@ -18,6 +18,7 @@ module.exports.htw2uas = function (moduleHTW) {
     uas.name = codeNameArray[3];
     delete uas['LV Name'];
   }
+  console.log(uas);
 
   uas.teacher = {
     lastName: moduleHTW.Dozentname,
