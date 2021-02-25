@@ -1,9 +1,9 @@
-const HTMLtoDOCX = require('html-to-docx')
-const fs = require('fs')
+const HTMLtoDOCX = require('html-to-docx');
+const fs = require('fs');
 
 class DocxGeneratorProxy {
   constructor() {
-    this.generator = HTMLtoDOCX
+    this.generator = HTMLtoDOCX;
   }
 
   saveFile(htmlString, headerHTMLString, filename, callBack) {
@@ -12,18 +12,18 @@ class DocxGeneratorProxy {
       table: { row: { cantSplit: true } },
       header: true,
       footer: true,
-      pageNumber: true,
+      pageNumber: true
     }).then((buffer) => {
-      fs.writeFileSync('./' + filename, buffer, (error) => {
+      fs.writeFileSync(`./${filename}`, buffer, (error) => {
         if (error) {
-          console.log('Docx file creation failed for file: ' + filename)
+          console.log(`Docx file creation failed for file: ${filename}`);
         } else {
-          console.log('Docx file created successfully for file: ' + filename)
+          console.log(`Docx file created successfully for file: ${filename}`);
         }
-      })
-      callBack()
-    })
+      });
+      callBack();
+    });
   }
 }
 
-module.exports = DocxGeneratorProxy
+module.exports = DocxGeneratorProxy;

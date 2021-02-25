@@ -1,26 +1,36 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const path = require('path')
-const app = express()
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
+const app = express();
 //const exporter = require('./exporter/docx_export')
-const helmet = require('helmet')
-const router = require('./router')
+const helmet = require('helmet');
+const router = require('./router');
 
-app.use(helmet())
-app.use(express.json())
+app.use(helmet());
+app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '/files')))
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
+  next();
+});
 
-app.use(bodyParser.json({
-  limit: '50mb'
-}))
+app.use(express.static(path.join(__dirname, '/files')));
 
-app.use(bodyParser.urlencoded({
-  limit: '50mb',
-  parameterLimit: 1000000,
-  extended: true
-}))
+app.use(
+  bodyParser.json({
+    limit: '50mb'
+  })
+);
 
-app.use("/", router);
+app.use(
+  bodyParser.urlencoded({
+    limit: '50mb',
+    parameterLimit: 1000000,
+    extended: true
+  })
+);
 
-module.exports = app
+app.use('/', router);
+
+module.exports = app;
