@@ -10,9 +10,9 @@ class ExportHelper {
     return output
   }
 
-  assembleFilename(program_data) {
-    const code = program_data.code ? program_data.code.split(' ').join('') : 'XX'
-    const name = program_data.code ? program_data.name.split(' ').join('') : 'xxx'
+  assembleFilename(data) {
+    const code = data.code ? data.code.split(' ').join('') : 'XX'
+    const name = data.code ? data.name.split(' ').join('') : 'xxx'
     const date_today = new Date().toJSON().slice(0,10);
     const filename = 'files/' + date_today + '_' + code + '-' + name + '.docx'
     return filename
