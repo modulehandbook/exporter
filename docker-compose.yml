@@ -1,0 +1,7 @@
+version: '3.4'
+services:
+  exporter:
+    build: .
+    container_name: exporter
+    ports:
+      - "3030:3030"
