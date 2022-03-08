@@ -1,0 +1,24 @@
+name: Test node app
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  runner-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo code
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - name: Yarn Install
+        run: yarn install --check-files
+      - name: Build
+        run: npm run build --if-present
+      - name: Test
+        run: npm test
