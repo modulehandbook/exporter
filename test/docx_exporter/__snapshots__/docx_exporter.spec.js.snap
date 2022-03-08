@@ -9,6 +9,7 @@ exports[`docxExporter.generateCourseComponents generates the course info pages 1
       
       
       
+      
       <h2 id=\\"mandatory1\\">Mandatory 1</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
       <table style=\\"width:100%\\">
@@ -143,6 +144,8 @@ eBook ISBN: 4m4z1ng</p>
 </tr>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      
       
       <h2 id=\\"someothercourse\\">Some other Course</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
@@ -292,6 +295,8 @@ eBook ISBN: 4m4z1ng</p>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
       
+      
+      
       <h2 id=\\"somethingimportand\\">Something Importand</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
       <table style=\\"width:100%\\">
@@ -425,6 +430,8 @@ Book2 toc</p>
 </tr>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      
       
       <h2 id=\\"somethingsomethingelse\\">Something &amp; Something else</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
@@ -562,6 +569,8 @@ Final    40%</p>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
       
+      
+      
       <h2 id=\\"morethings\\">More things</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
       <table style=\\"width:100%\\">
@@ -691,6 +700,8 @@ Final    40%</p>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
       
+      
+      
       <h2 id=\\"amazingthesiswithseminar\\">Amazing Thesis with seminar</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
       <table style=\\"width:100%\\">
@@ -811,6 +822,8 @@ Final    40%</p>
 </tr>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
+      
       
       <h2 id=\\"namethatdoesntexistyet\\">Name that doesnt exist yet</h2>
       <h3 id=\\"abasicinformation\\">A - Basic Information</h3>
@@ -940,6 +953,7 @@ Final    40%</p>
 </tr>
 </table>
       <div class=\\"page-break\\" style=\\"page-break-after: always\\"></div>
+      
       "
 `;
 
