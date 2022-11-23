@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`htmlGenerator.generateTable generates a table with 1 row, 2 cells 1`] = `
-"<table style=\\"width:100%\\">
+"<table style="width:100%">
 <tr>
         <td>
           <p>row1, cell1</p>
@@ -14,7 +14,7 @@ exports[`htmlGenerator.generateTable generates a table with 1 row, 2 cells 1`] =
 `;
 
 exports[`htmlGenerator.generateTable generates a table with 1 row, 3 cells 1`] = `
-"<table style=\\"width:100%\\">
+"<table style="width:100%">
 <tr>
         <td>
           <p>row1, cell1</p>
@@ -30,7 +30,7 @@ exports[`htmlGenerator.generateTable generates a table with 1 row, 3 cells 1`] =
 `;
 
 exports[`htmlGenerator.generateTable generates a table with 2 rows, 2 cells 1`] = `
-"<table style=\\"width:100%\\">
+"<table style="width:100%">
 <tr>
         <td>
           <p>row1, cell1</p>
