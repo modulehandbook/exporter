@@ -3,48 +3,33 @@ const DocxExporter = require('../docx_exporter/docx_export')
 const ExportHelper = require('../helper/export_helper')
 const docxExporter = new DocxExporter()
 const exportHelper = new ExportHelper()
-const program = require('../test/data/program')
-const course = require('../test/data/course')
+const demoData = {
+  program: require('../test/data/program'),
+  course: require('../test/data/course')
+}
 
 module.exports = {
+  extract_export_type: (req,res,next) =>  {
+    req.export_type = req.params[0];
+    next();
+  },
   convert2docx: (req,res,next) =>  {
-    var export_type = req.params[0];
-        console.log(export_type);
-    const program_data = req.body
-    const filename = exportHelper.assembleFilename(program_data)
-    //var docx_blob = program_data_2_docx(program_data,export_type)
-    docxExporter[export_type](filename, program_data, (docx_blob) => {
+    const filename = exportHelper.assembleFilename(req.program_data)
+    docxExporter[req.export_type](filename, req.program_data, (docx_blob) => {
       res.attachment(filename);
-      console.log("about to send blob: "+docx_blob);
-      console.log(docx_blob)
       res.type(docx_blob.type)
       docx_blob.arrayBuffer().then((buf) => {
         res.send(Buffer.from(buf))
       });
-    //next();
     })
   },
-  
-  demo_program: (req, res) => {
-    const program_data = program
-    const filename = exportHelper.assembleFilename(program_data)
-    docxExporter.exportProgram(filename, program_data, () => {
-      res.download(filename, function(err){
-        if (err) {
-          throw err
-        }
-      })
-    })
+  add_data: (req, res, next) => {
+    req.program_data = req.body;
+    next();
   },
-  demo_course: (req, res) => {
-    const course_data = course
-    const filename = exportHelper.assembleFilename(course_data)
-    docxExporter.exportCourse(filename, course_data, () => {
-      res.download(filename, function(err){
-        if (err) {
-          throw err
-        }
-      })
-    })
+
+  add_demo_data: (req, res, next) => {
+    req.program_data = demoData[req.export_type];
+    next();
   }
 }

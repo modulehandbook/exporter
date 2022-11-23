@@ -14,15 +14,6 @@ class DocxGeneratorProxy {
       footer: true,
       pageNumber: true,
     }).then((buffer) => {
-      console.log("about to write: "+typeof buffer)
-      console.log(buffer)
-      //fs.writeFileSync('./' + filename, buffer, (error) => {
-      //  if (error) {
-      //    console.log('Docx file creation failed for file: ' + filename)
-      //  } else {
-      //    console.log('Docx file created successfully for file: ' + filename)
-      //  }
-      //})
       callBack(buffer)
     })
   }

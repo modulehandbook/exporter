@@ -22,7 +22,7 @@ describe('GET', () => {
   })
   it('/docx/demo_program has status ok', done => {
     request(app)
-      .get('/docx/demo_program')
+      .get('/docx/program/demo')
       .then((res) => {
   			expect(res.statusCode).toBe(200)
   			done()
@@ -30,7 +30,7 @@ describe('GET', () => {
   })
   it('/docx/demo_course has status ok', done => {
       request(app)
-          .get('/docx/demo_course')
+          .get('/docx/course/demo')
           .then((res) => {
                 expect(res.statusCode).toBe(200)
                 done()
@@ -40,6 +40,7 @@ describe('GET', () => {
 
 describe('POST', () => {
     it('/docx/program has status ok', done => {
+
         request(app)
             .post('/docx/program')
             .send(program)
