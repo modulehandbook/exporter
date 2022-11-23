@@ -20,6 +20,19 @@ app.use(bodyParser.urlencoded({
   extended: true
 }))
 
+// how to send file via attachment
+// example from https://www.tutorialspoint.com/res-attachment-method-in-express-js
+// With middleware
+app.use('/atta', function(req, res, next){
+   res.attachment('tutorialspoint.txt');
+   console.log(res.get('Content-Disposition'));
+   next();
+})
+app.get('/atta', function(req, res){
+   console.log('Attachment Added');
+   res.send("Attachment Added");
+});
+
 app.use("/", router);
 
 

@@ -12,7 +12,7 @@ class DocxExporter {
     this.exportHelper = new ExportHelper()
   }
 
-  exportProgram(filename, program_data, callBack) {
+  program(filename, program_data, callBack) {
     // const doc = this.docxGenerator.generateDoc('./styles/docx/styles.xml', 'utf-8')
     const program_name_and_code = program_data.name + ' [' + program_data.code + ']'
     const header = '<p>Module Descriptions GIU, ' + program_name_and_code + '</p>'
@@ -32,10 +32,10 @@ class DocxExporter {
         </body>
     </html>`
 
-    this.docxGenerator.saveFile(doc, header, filename, callBack)
+    this.docxGenerator.html2Docx(doc, header, callBack)
   }
 
-  exportCourse(filename, course_data, callBack) {
+  course(filename, course_data, callBack) {
     // const doc = this.docxGenerator.generateDoc('./styles/docx/styles.xml', 'utf-8')
     const course_name_and_code = course_data.name + ' [' + course_data.code + ']'
     const header = '<p>Module Descriptions GIU, ' + course_name_and_code + '</p>'
@@ -53,7 +53,7 @@ class DocxExporter {
         </body>
     </html>`
 
-    this.docxGenerator.saveFile(doc, header, filename, callBack)
+    this.docxGenerator.html2Docx(doc, header, callBack)
   }
 
   generateProgramComponents(program_data) {

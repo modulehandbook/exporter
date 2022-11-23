@@ -6,7 +6,7 @@ class DocxGeneratorProxy {
     this.generator = HTMLtoDOCX
   }
 
-  saveFile(htmlString, headerHTMLString, filename, callBack) {
+  html2Docx(htmlString, headerHTMLString, callBack) {
     // https://github.com/privateOmega/html-to-docx/blob/master/example/example-node.js
     HTMLtoDOCX(htmlString, headerHTMLString, {
       table: { row: { cantSplit: true } },
@@ -14,14 +14,16 @@ class DocxGeneratorProxy {
       footer: true,
       pageNumber: true,
     }).then((buffer) => {
-      fs.writeFileSync('./' + filename, buffer, (error) => {
-        if (error) {
-          console.log('Docx file creation failed for file: ' + filename)
-        } else {
-          console.log('Docx file created successfully for file: ' + filename)
-        }
-      })
-      callBack()
+      console.log("about to write: "+typeof buffer)
+      console.log(buffer)
+      //fs.writeFileSync('./' + filename, buffer, (error) => {
+      //  if (error) {
+      //    console.log('Docx file creation failed for file: ' + filename)
+      //  } else {
+      //    console.log('Docx file created successfully for file: ' + filename)
+      //  }
+      //})
+      callBack(buffer)
     })
   }
 }
