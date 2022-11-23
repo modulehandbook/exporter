@@ -7,13 +7,12 @@ const helmet = require('helmet')
 const router = require('./router')
 
 app.use(helmet())
-app.use(express.json())
-
-app.use(express.static(path.join(__dirname, '/files')))
-
 app.use(bodyParser.json({
   limit: '50mb'
 }))
+app.use(express.json())
+
+app.use(express.static(path.join(__dirname, '/files')))
 
 app.use(bodyParser.urlencoded({
   limit: '50mb',
