@@ -16,7 +16,7 @@
     "showdown": "^1.9.1"
   },
   "engines": {
-    "node": "19.1.0"
+    "node": "19.2.0"
   },
   "devDependencies": {
     "jest": "^29.3.1",

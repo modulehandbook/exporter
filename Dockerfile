@@ -1,4 +1,4 @@
-FROM node:19
+FROM node:19.2-alpine AS exporter-prod
 # Create app directory
 WORKDIR /usr/src/app
 # Install app dependencies
@@ -6,9 +6,10 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-# Bundle app source
+RUN npm ci --omit=dev --only=production
+
 COPY . .
 CMD [ "npm", "start" ]
+
+FROM exporter-prod AS exporter-dev
+RUN npm install
